@@ -27,7 +27,7 @@ def encode(filepath):
         print('Skipping: no video codec reported')
         return None
     # Video transcode options
-    video_opts = '-c:v libx265 -preset veryfast -crf 25 -profile:v main10 -pix_fmt p010le -tag:v hvc1 -map 0:v -map_chapters 0 -c:s copy -map 0:s? -c:t copy -map 0:t?'
+    video_opts = '-c:v libx265 -preset veryfast -crf 25 -tag:v hvc1 -map 0:v -map_chapters 0 -c:s copy -map 0:s? -c:t copy -map 0:t?'
     # Get the audio channel codec
     audio_codec = get_codec(filepath, channel='a:0')
     audio_opts = '-ac 2 -c:a libopus -b:a 96k -map 0:a? -map_metadata 0'
